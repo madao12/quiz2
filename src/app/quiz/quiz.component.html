@@ -1,0 +1,12 @@
+<div *ngIf="q1; else showResults">
+  <div><span>Question: </span>{{q1.name}}</div>
+  <div><span>Choice 1: </span>{{q1.ans1}}</div>
+  <div><span>Choice 2: </span>{{q1.ans2}}</div>
+  <div>Remaining Questions: {{selected.length}}</div>
+  <input type="button" value="Click Me" (click)="onSelect()">
+</div>
+
+<ng-template #showResults>
+    <a routerLink="">Show Results</a>
+</ng-template>
+

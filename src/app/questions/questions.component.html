@@ -1,0 +1,17 @@
+
+<h2>Select Questions({{questions.length}})</h2>
+<ul>
+  <li *ngFor="let question of questions" (click)="onSelect(question)" >
+    {{question.name}}
+    
+  </li>
+</ul>
+
+<app-selected-questions></app-selected-questions>
+<a routerLink="/quiz">start the test</a>
+
+
+
+
+
+

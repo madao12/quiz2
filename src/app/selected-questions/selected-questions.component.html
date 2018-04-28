@@ -1,0 +1,6 @@
+<h2>Selected Questions({{selected.length}})</h2>
+<ul>
+  <li *ngFor="let sel of selected" (click)="onSelect(sel)" >
+    {{sel.name}}
+  </li>
+</ul>
