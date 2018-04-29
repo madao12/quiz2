@@ -1,9 +1,9 @@
 import { QuestionClass } from './question';
 
 export const QUESTIONS: QuestionClass[] = [
-    {id:11, name: 'What is this?', ans1: ' a car ', ans2: 'a color ', correctAns: 'ans2'},
-    {id:11, name: 'What is that?', ans1: ' a moon ', ans2: 'a river ', correctAns: 'ans2'},
-    {id:11, name: 'What are those?', ans1: ' a desk ', ans2: 'a mouse ', correctAns: 'ans2'}
+    {id:1, name: '2 + 2 is?', ans1: ' 4 ', ans2: '10 ', correctAns: '1'},
+    {id:2, name: '4 - 1 is?', ans1: ' 1 ', ans2: '3 ', correctAns: '2'},
+    {id:3, name: 'Do you know the way?', ans1: ' Yes ', ans2: 'No', correctAns: '1'}
     
     
     

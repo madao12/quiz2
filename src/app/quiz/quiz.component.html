@@ -1,12 +1,19 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+
 <div *ngIf="q1; else showResults">
   <div><span>Question: </span>{{q1.name}}</div>
-  <div><span>Choice 1: </span>{{q1.ans1}}</div>
-  <div><span>Choice 2: </span>{{q1.ans2}}</div>
-  <div>Remaining Questions: {{selected.length}}</div>
-  <input type="button" value="Click Me" (click)="onSelect()">
+  <div>{{q1.ans1}}<input type="radio" value="1" name="choice" ngModel></div>
+  <div>{{q1.ans2}}<input type="radio" value="2" name="choice" ngModel></div>
+  <div>Remaining Questions: {{selected.length-1}}</div>
+  <button>Submit</button>
+  <!--><input type="button" value="Click Me" (click)="onSelect()"><!-->
+  
 </div>
 
+</form>
+
 <ng-template #showResults>
-    <a routerLink="">Show Results</a>
+    <p>Correct answers: {{correct}} </p>
+    
 </ng-template>
 
