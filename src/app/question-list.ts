@@ -13,5 +13,4 @@ export const QUESTIONS: QuestionClass[] = [
     {id:10, name: '4 + 6 is?', ans1: ' 7 ', ans2: '10 ', correctAns: '2'}
     
     
-    
 ];

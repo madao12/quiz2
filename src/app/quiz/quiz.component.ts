@@ -16,6 +16,7 @@ export class QuizComponent implements OnInit {
   q1=this.selected[0];
   choice='';
   correct=0; 
+  numberOfQuestions=this.selected.length;
  /*
   onSelect(question: QuestionClass): void{
     this.choice=form.controls['choice'].value;

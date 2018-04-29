@@ -1,6 +1,7 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
 
 <div *ngIf="q1; else showResults">
+
   <div><span>Question: </span>{{q1.name}}</div>
   <div>{{q1.ans1}}<input type="radio" value="1" name="choice" ngModel></div>
   <div>{{q1.ans2}}<input type="radio" value="2" name="choice" ngModel></div>
@@ -13,7 +14,7 @@
 </form>
 
 <ng-template #showResults>
-    <p>Correct answers: {{correct}} </p>
+    <p>Score: {{correct}} / {{numberOfQuestions}} </p>
     
 </ng-template>
 
