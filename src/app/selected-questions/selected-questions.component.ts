@@ -18,7 +18,12 @@ export class SelectedQuestionsComponent implements OnInit {
     const index: number = this.selected.indexOf(question);
     this.selected.splice(index,1);
     this.selectedQuestion = question;
-    this.questions.push({id: this.selectedQuestion.id, name: this.selectedQuestion.name, ans1: this.selectedQuestion.ans1, ans2: this.selectedQuestion.ans2, correctAns: this.selectedQuestion.correctAns});
+    this.questions.push({
+      id: this.selectedQuestion.id,
+      numberOfAnswers: this.selectedQuestion.numberOfAnswers, 
+      name: this.selectedQuestion.name, 
+      choices: this.selectedQuestion.choices
+    });
 
   }
 

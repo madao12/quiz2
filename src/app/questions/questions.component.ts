@@ -4,6 +4,7 @@ import { QUESTIONS } from '../question-list';
 import { SELECTED } from '../selected-list';
 
 
+
 @Component({
   selector: 'app-questions',
   templateUrl: './questions.component.html',
@@ -19,7 +20,12 @@ export class QuestionsComponent implements OnInit {
     const index: number = this.questions.indexOf(question);
     this.questions.splice(index,1);
     this.selectedQuestion = question;
-    this.selected.push({id: this.selectedQuestion.id, name: this.selectedQuestion.name, ans1: this.selectedQuestion.ans1, ans2: this.selectedQuestion.ans2, correctAns: this.selectedQuestion.correctAns});
+    this.selected.push({
+      id: this.selectedQuestion.id,
+      numberOfAnswers: this.selectedQuestion.numberOfAnswers,
+      name: this.selectedQuestion.name, 
+      choices: this.selectedQuestion.choices
+    });
 
   }
  

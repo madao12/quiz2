@@ -13,37 +13,56 @@ import {NgForm} from '@angular/forms';
 export class QuizComponent implements OnInit {
   questions = QUESTIONS;
   selected = SELECTED;
-  q1=this.selected[0];
-  choice='';
-  correct=0; 
   numberOfQuestions=this.selected.length;
- /*
-  onSelect(question: QuestionClass): void{
-    this.choice=form.controls['choice'].value;
-    this.questions.push({id: this.selected[0].id, name: this.selected[0].name, ans1: this.selected[0].ans1, ans2: this.selected[0].ans2, correctAns: this.selected[0].correctAns});
-    this.selected.splice(0,1);
-    this.q1=this.selected[0];
-    
-  }*/
+  i=0;
+  question=this.selected[this.i];
+  choices=this.question.choices;
+  correctOption=0;
+  correct=0;
+  wrongFlag=0;
 
-  onSubmit(f: NgForm) {
-    this.choice=f.controls['choice'].value;
-      
-    if (this.choice==this.selected[0].correctAns){
-      this.correct++;
+  onClick(isTrue:boolean,element: HTMLInputElement){
+
+    if (element.checked){
+      if(isTrue==true){
+        this.correctOption++;
+      }else{
+        this.wrongFlag++;
+      }
     }
-    
-//
-
-
-
-    this.questions.push({id: this.selected[0].id, name: this.selected[0].name, ans1: this.selected[0].ans1, ans2: this.selected[0].ans2, correctAns: this.selected[0].correctAns});
-    this.selected.splice(0,1);
-    this.q1=this.selected[0];
+    else//when uncheck
+    {
+      if(isTrue==true){
+        this.correctOption--;
+      }else{
+      this.wrongFlag--;
+      }
+    }
 
   }
+  
+  onSubmit(f: NgForm) {
+    if (this.correctOption===this.question.numberOfAnswers && this.wrongFlag==0){
+      this.correct++;
+    }
+    this.i++;
+    this.question=this.selected[this.i];
+    this.choices=this.selected[this.i].choices;
+    this.correctOption=0;
+    this.wrongFlag=0;
+
+  }
+  
+
+
+
+
+  
+
+
 
   constructor() {
+   
     
    }
 

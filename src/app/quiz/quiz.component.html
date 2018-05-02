@@ -1,20 +1,33 @@
+
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
 
-<div *ngIf="q1; else showResults">
+<div *ngIf="question; else showResults">
 
-  <div><span>Question: </span>{{q1.name}}</div>
-  <div>{{q1.ans1}}<input type="radio" value="1" name="choice" ngModel></div>
-  <div>{{q1.ans2}}<input type="radio" value="2" name="choice" ngModel></div>
-  <div>Remaining Questions: {{selected.length-1}}</div>
-  <button>Submit</button>
-  <!--><input type="button" value="Click Me" (click)="onSelect()"><!-->
+  <div><span>Question: {{question.name}} </span> </div>
   
+  <li *ngFor="let choice of choices;let i of index" >
+    <input #c (change)="onClick(choice.istrue,c)" type="checkbox"  name="choice" ngModel/>{{choice.answear}}
+  </li>
+  <br>
+
+Number Of Answers: {{question.numberOfAnswers}} <br><br>
+Correct answers(must be {{question.numberOfAnswers}}) : {{correctOption}} <br><br>
+Wrong answers(must be 0): {{wrongFlag}}<br><br>
+
+  <button>Submit</button>
+  
+ 
+    
+  
+    
 </div>
 
 </form>
 
 <ng-template #showResults>
-    <p>Score: {{correct}} / {{numberOfQuestions}} </p>
-    
+
+  <p>Score: {{correct}} / {{numberOfQuestions}} </p>
+
+  
 </ng-template>
 
