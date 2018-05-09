@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionClass } from '../question';
 import { QUESTIONS } from '../question-list';
 import { SELECTED } from '../selected-list';
-
+import { FilterPipe } from '../filter.pipe';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class QuestionsComponent implements OnInit {
   questions = QUESTIONS;
   selected = SELECTED;
   selectedQuestion:QuestionClass;
-  
+  idSearch='';
   
   onSelect(question: QuestionClass): void{
     const index: number = this.questions.indexOf(question);
