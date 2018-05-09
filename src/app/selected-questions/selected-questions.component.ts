@@ -6,7 +6,7 @@ import { QUESTIONS } from '../question-list';
 @Component({
   selector: 'app-selected-questions',
   templateUrl: './selected-questions.component.html',
-  styleUrls: ['./selected-questions.component.css']
+  styleUrls: ['./selected-questions.component.scss']
 })
 export class SelectedQuestionsComponent implements OnInit {
   
@@ -22,6 +22,7 @@ export class SelectedQuestionsComponent implements OnInit {
       id: this.selectedQuestion.id,
       numberOfAnswers: this.selectedQuestion.numberOfAnswers, 
       name: this.selectedQuestion.name, 
+      explanation: this.selectedQuestion.explanation,
       choices: this.selectedQuestion.choices
     });
 

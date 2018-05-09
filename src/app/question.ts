@@ -1,7 +1,8 @@
 export class QuestionClass {
-    id: number;
+    id: string;
     numberOfAnswers: number;
     name: string;
+    explanation: string;
     choices:any[];
     
     

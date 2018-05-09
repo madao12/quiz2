@@ -8,7 +8,8 @@ import { QuestionsComponent } from './questions/questions.component';
 import { SelectedQuestionsComponent } from './selected-questions/selected-questions.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { AppRoutingModule } from './/app-routing.module';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FilterPipe} from './filter.pipe';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AppRoutingModule } from './/app-routing.module';
     AppComponent,
     QuestionsComponent,
     SelectedQuestionsComponent,
-    QuizComponent
+    QuizComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
