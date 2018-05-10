@@ -10,6 +10,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FilterPipe} from './filter.pipe';
+import { QuestionService } from './question.service';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { FilterPipe} from './filter.pipe';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

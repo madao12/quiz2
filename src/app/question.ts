@@ -3,8 +3,5 @@ export class QuestionClass {
     numberOfAnswers: number;
     name: string;
     explanation: string;
-    choices:any[];
-    
-    
-
+    choices: any[];
 }

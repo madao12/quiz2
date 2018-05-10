@@ -4,16 +4,16 @@
         <h2>Ερωτήσεις({{questions.length}})</h2>
         <input type="text" [(ngModel)]="idSearch" placeholder="Search ID" >
     </div>
-    
+
     <div class="col">
-        <h2>Επιλεγμένες Ερωτήσεις({{selected.length}})</h2>  
+        <h2>Επιλεγμένες Ερωτήσεις({{selected.length}})</h2>
     </div>
 
-      
+
 </div>
 <div  class="container">
     <div class="col2">
-    
+
         <!--
         <tr  class="life-container" *ngFor="let question of questions | filterID:idSearch  " (click)="onSelect(question)"  >
             <td >{{question.id}}) </td>
@@ -24,9 +24,9 @@
                 {{question.name}}
             </li>
         </ol>
-  
-   
-    
+
+
+
     </div>
     <div class="col2">
     <app-selected-questions></app-selected-questions>
@@ -39,6 +39,8 @@
 </div>
 
 
-
+<input type="text" (keyup)="searchById($event.target.value)">
+<p *ngIf="question">{{question.name}}</p>
+<p *ngIf="question">{{question.id}}</p>
 
 
