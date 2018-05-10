@@ -2,7 +2,7 @@
 <div class="container color-dark ">
     <div class="col">
         <h2>Ερωτήσεις({{questions.length}})</h2>
-        <input type="text" [(ngModel)]="idSearch" >
+        <input type="text" [(ngModel)]="idSearch" placeholder="Search ID" >
     </div>
     
     <div class="col">
@@ -13,23 +13,24 @@
 </div>
 <div  class="container">
     <div class="col2">
-    <table>
-      
-        <tr>
-            <th>ID</th>
-            <th>QUESTION</th>
-            
-        </tr>
+    
+        <!--
         <tr  class="life-container" *ngFor="let question of questions | filterID:idSearch  " (click)="onSelect(question)"  >
             <td >{{question.id}}) </td>
             <td >{{question.name}}</td>
-        </tr>
+        </tr>-->
+        <ol>
+            <li class="life-container" value={{question.id}} *ngFor="let question of questions | filterID:idSearch" (click)="onSelect(question)">
+                {{question.name}}
+            </li>
+        </ol>
   
    
-    </table>
+    
     </div>
-
+    <div class="col2">
     <app-selected-questions></app-selected-questions>
+    </div>
 </div>
 <div  class="container" >
         <div class="col">

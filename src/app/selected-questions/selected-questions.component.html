@@ -1,16 +1,12 @@
-<div class="col2">
-<table>
-        <tr>
-            <th>ID</th>
-            <th>QUESTION</th>
-        </tr>
-        <tr  class="life-container" *ngFor="let sel of selected" (click)="onSelect(sel)"  >
-            <td >{{sel.id}}) </td>
-            <td>{{sel.name}}</td>
-        </tr>
-</table>
 
-</div>
+
+<ol>
+    <li class="life-container" value={{sel.id}} *ngFor="let sel of selected" (click)="onSelect(sel)">
+        {{sel.name}}
+    </li>
+</ol>
+
+
 
 
 

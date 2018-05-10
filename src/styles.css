@@ -1,25 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:600');
+
 body {
     background:#f1f2f3;
     
-    padding: 3em;
-    font-family: 'Raleway', 'Arial';
-    color:#504f4f;
+    padding: 1em;
+    font-family:  'Fira Sans', 'Arial';
+    color:#414040;
 }   
-table{
-    width: 700px;  
-    border-spacing: 0 10px;
-    
-    border-collapse: separate; 
-    
-}
-td{
-     height:50px;
-    
-}
+
+
 a{
-    font-size: 1.5em;
-    color:#fff;
+    font-size: 2em;
+    color:#f1f0f0;
     text-decoration:none;
 }
